@@ -1,0 +1,20 @@
+services:
+  tfpython:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: tfpython
+
+    ports:
+      - "8888:8888"
+    volumes:
+      - type: bind
+        source: .
+        target: /tidyFinance
+          #      - type: bind
+          #        source: .config/rstudio
+          #        target: /home/rstudio/.config/rstudio
+          #      - type: bind
+          #        source: ~/.Renviron
+          #        target: /home/rstudio/.Renviron
+    command: jupyter notebook --ip 0.0.0.0  --port 8888 --no-browser --allow-root
