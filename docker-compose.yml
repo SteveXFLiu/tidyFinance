@@ -17,4 +17,6 @@ services:
           #      - type: bind
           #        source: ~/.Renviron
           #        target: /home/rstudio/.Renviron
+    environment:
+      - JUPYTER_TOKEN=jupyter
     command: jupyter notebook --ip 0.0.0.0  --port 8888 --no-browser --allow-root
